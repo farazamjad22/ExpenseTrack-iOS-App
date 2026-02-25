@@ -1,2 +1,118 @@
-# ExpenseTrack-iOS-App
-**ExpenseTrack** is a personal finance iOS app built with SwiftUI that lets users log daily income and expense transactions. Each entry includes an amount, a type, a category (with emoji icons), and an optional note — all presented through a clean, native iOS form-based interface.  Sources
+# ExpenseTrack 💰
+
+A clean, modern **iOS expense tracking app** built with SwiftUI using the MVVM architecture pattern. Track your income and expenses, view a live balance summary, and manage your transactions effortlessly.
+
+---
+
+## Features
+
+- 📊 **Live Balance Card** — Total balance updates the instant a transaction is added or deleted
+- 🔴🟢 **Expense & Income Summary** — Side-by-side stat cards showing total amount and count for each type
+- 📅 **Date-Grouped Transactions** — Transactions grouped by date with native swipe-to-delete
+- 🏷️ **Category Badges** — Colorful emoji + category name badge on every transaction row
+- ➕ **Add Transaction Sheet** — Clean modal with amount input, Income/Expense toggle, category picker, and an optional note
+- 💾 **Persistent Storage** — All transactions saved locally with `UserDefaults` + `JSONEncoder`
+- 💶 **EUR Currency** — All amounts displayed in Euro (€) with 2 decimal places
+
+---
+
+## Tech Stack
+
+| | |
+|---|---|
+| **Language** | Swift 5 |
+| **UI Framework** | SwiftUI |
+| **Architecture** | MVVM |
+| **Persistence** | UserDefaults + JSONEncoder / JSONDecoder |
+| **Minimum iOS** | iOS 26.2 |
+| **Dependencies** | None |
+
+---
+
+## Project Structure
+
+```
+ExpenseTrack/
+├── ExpenseTrackApp.swift              # @main entry point
+├── Models/
+│   └── Transaction.swift             # Transaction struct, Category & TransactionType enums
+├── ViewModels/
+│   └── TransactionViewModel.swift    # Business logic, computed totals, CRUD, persistence
+└── Views/
+    ├── ContentView.swift             # Main screen — balance card, stat cards, transaction list, FAB
+    └── AddTransactionView.swift      # Add transaction sheet modal
+```
+
+---
+
+## Data Model
+
+### `Transaction`
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | `UUID` | Auto-generated unique identifier |
+| `amount` | `Double` | Transaction amount in EUR |
+| `category` | `Category` | One of 12 categories |
+| `type` | `TransactionType` | `.income` or `.expense` |
+| `date` | `Date` | Date the transaction was recorded |
+| `description` | `String` | Optional user note |
+
+### Categories
+
+| Emoji | Category | Color |
+|---|---|---|
+| 🛒 | Groceries | Green |
+| 💰 | Salary | Blue |
+| 💊 | Health | Red |
+| 🚗 | Transport | Orange |
+| 🎬 | Entertainment | Purple |
+| 💡 | Utilities | Yellow |
+| 🏠 | Rent | Light Blue |
+| 🧾 | Bills | Brown |
+| 🍽️ | Dining | Coral |
+| 🛍️ | Shopping | Violet |
+| 🏦 | Savings | Teal |
+| 📦 | Other | Gray |
+
+---
+
+## Getting Started
+
+### Requirements
+
+- Xcode 17 or later
+- iOS 26.2 Simulator or a physical device running iOS 26.2+
+
+### Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/ExpenseTrack.git
+   cd ExpenseTrack
+   ```
+
+2. **Open in Xcode**
+   ```bash
+   open ExpenseTrack.xcodeproj
+   ```
+
+3. **Select a simulator or device**, then press **⌘ + R** to build and run.
+
+> No package manager setup needed — zero external dependencies.
+
+---
+
+## Usage
+
+| Action | How to do it |
+|---|---|
+| **Add a transaction** | Tap the **+** FAB button (bottom-right) |
+| **Delete a transaction** | **Swipe left** on any transaction row → tap Delete |
+| **View total balance** | Balance card at the top — updates live |
+| **View totals by type** | Expenses (🔴) and Income (🟢) stat cards below the balance |
+
+---
+
+## Screenshots
+
