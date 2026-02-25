@@ -88,7 +88,7 @@ ExpenseTrack/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/ExpenseTrack.git
+   git clone https://github.com/farazamjad22/ExpenseTrack-iOS-App.git
    cd ExpenseTrack
    ```
 
@@ -115,4 +115,7 @@ ExpenseTrack/
 ---
 
 ## Screenshots
+
+<img width="360" alt="Simulator Screenshot - iPhone 17 Pro - 2026-02-25 at 23 45 28" src="https://github.com/user-attachments/assets/c004ea2e-5f45-4739-b91f-afab13cb57ee" />
+<img width="360" alt="Simulator Screenshot - iPhone 17 Pro - 2026-02-25 at 23 45 12" src="https://github.com/user-attachments/assets/1aa0c604-f223-4980-a2f2-8bbbe46d6430" />
 
